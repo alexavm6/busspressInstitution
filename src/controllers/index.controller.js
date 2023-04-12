@@ -16,4 +16,8 @@ indexCtrl.renderRates = (req, res) => {
     res.render('info/rates');
 };
 
+indexCtrl.renderSteps = (req, res) => {
+    res.render('info/steps');
+};
+
 module.exports = indexCtrl;

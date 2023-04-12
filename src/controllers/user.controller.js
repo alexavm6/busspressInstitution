@@ -4,7 +4,11 @@ userCtrl.renderLogin = (req, res) => {
     res.render('user/login');
 };
 
-userCtrl.renderSignout = (req, res) => {
+userCtrl.login = (req, res) => {
+    res.send('iniciando sesion');
+};
+
+userCtrl.logout = (req, res) => {
     res.send('cerrando sesion')
 };
 

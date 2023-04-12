@@ -2,13 +2,16 @@ const { Router } = require('express');
 const router = Router();
 
 const { 
-    renderLogin, 
-    renderSignout
+    renderLogin,
+    login, 
+    logout
 } = require('../controllers/user.controller');
 
 router.get('/user/login', renderLogin);
 
-router.get('/user/signout', renderSignout);
+router.post('/user/login', login);
+
+router.get('/user/logout', logout);
 
 
 
