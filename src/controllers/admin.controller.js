@@ -57,20 +57,29 @@ adminCtrl.newuser = async (req, res) => {
     }else{
 
         const { 
-            user_name,
-            user_email,
-            user_document_number
+            user,
+            email,
+            document_number
         } = req.body;
-        const user1 = await User.findOne({user: user_name}); 
-        console.log(user1);
+
+        console.log(user, email, document_number);
+
+        const user1 = await User.findOne({user: user}); 
+        console.log('Usuario', user1);
         if (user1) {
             errors.push({text: 'Ya existe un usuario con este codigo'});
         }
-        const email1 = await User.findOne({email: user_email});
+        
+        
+        const email1 = await User.findOne({email: email});
+        console.log('Email', email1);
         if (email1) {
-            errors.push({text: 'Ya existe con este email'});
+            errors.push({text: 'Ya existe un usuario con este email'});
         }
-        const document_number1 = await User.findOne({document_number: user_document_number});
+
+        
+        const document_number1 = await User.findOne({document_number: document_number});
+        console.log('Numero de documento', document_number1);
         if (document_number1) {
             errors.push({text: 'Ya existe un usuario con este numero de documento'});
         }
