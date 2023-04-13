@@ -12,8 +12,18 @@ userCtrl.login = passport.authenticate('local', {
     failureFlash: true
 });
 
-userCtrl.logout = (req, res) => {
-    res.send('cerrando sesion')
+userCtrl.logout = (req, res, next) => {
+    req.logout(function(err) {
+        if (err) {
+            return next(err);
+        }
+        req.flash('success_msg', 'Sesión cerrada exitosamente');
+        res.redirect('/user/login');
+    });
+    /*
+    req.flash('success_msg', 'Sesión cerrada exitosamente');
+    res.redirect('/user/login');
+    */
 };
 
 module.exports = userCtrl;

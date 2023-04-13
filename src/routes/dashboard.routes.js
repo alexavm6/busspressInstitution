@@ -8,13 +8,15 @@ const {
     renderAssessment 
 } = require('../controllers/dashboard.controller');
 
-router.get('/dashboard', renderDashboard);
+const { isAuthenticated } = require('../helpers/auth');
 
-router.get('/dashboard/routes', renderRoutes);
+router.get('/dashboard', isAuthenticated, renderDashboard);
 
-router.get('/dashboard/statistics', renderStatistics);
+router.get('/dashboard/routes', isAuthenticated, renderRoutes);
 
-router.get('/dashboard/assessment', renderAssessment);
+router.get('/dashboard/statistics', isAuthenticated, renderStatistics);
+
+router.get('/dashboard/assessment', isAuthenticated, renderAssessment);
 
 
 

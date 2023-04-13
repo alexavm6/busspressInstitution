@@ -7,9 +7,11 @@ const {
     
 } = require('../controllers/admin.controller');
 
-router.get('/admin/newuser', renderNewuser);
+const { isAuthenticated } = require('../helpers/auth');
 
-router.post('/admin/newuser', newuser);
+router.get('/admin/newuser', isAuthenticated, renderNewuser);
+
+router.post('/admin/newuser', isAuthenticated, newuser);
 
 
 

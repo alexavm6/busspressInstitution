@@ -1,6 +1,8 @@
 const { Router } = require('express');
 const router = Router();
 
+const { isAuthenticated } = require('../helpers/auth');
+
 const { 
     renderLogin,
     login, 
@@ -11,7 +13,7 @@ router.get('/user/login', renderLogin);
 
 router.post('/user/login', login);
 
-router.get('/user/logout', logout);
+router.get('/user/logout', isAuthenticated, logout);
 
 
 
