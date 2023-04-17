@@ -25,7 +25,10 @@ app.engine('.hbs', exphbs.engine({
     extname: '.hbs',
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials')
+    partialsDir: path.join(app.get('views'), 'partials'),
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true
+    }
 }));
 app.set('view engine', '.hbs'); 
 
