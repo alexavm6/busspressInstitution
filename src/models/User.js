@@ -50,13 +50,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    start_service:  {
-        type: String,
-        required: true
+    gender: {
+        type: String
     },
-    end_service:  {
-        type: String,
-        required: true
+    age: {
+        type: Number
     }
 }, {
     timestamps: true
