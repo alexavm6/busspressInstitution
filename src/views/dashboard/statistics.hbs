@@ -1,6 +1,37 @@
-<section class="card">
-    <div class="card-body">
-        <h1>Estadisticas</h1>
-        <p>Somos una empresa que lleva universitarios por todo el pais a su campus de forma segura y divertida</p>
-    </div>
-</section>
+
+
+<section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+            
+        </div>
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Estadisticas</span>
+                </div>
+                {{#each control}}
+                    <div class="boxes">
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Viajes Totales a Tomar</span>
+                        <span class="number">{{total_trips}}</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-comments"></i>
+                        <span class="text">Viajes Tomados</span>
+                        <span class="number">{{taken_trips}}</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Viajes No Tomados</span>
+                        <span class="number">{{untaken_trips}}</span>
+                    </div>
+                </div>
+                {{/each}}
+                
+            </div>
+            
+        </div>
+    </section>

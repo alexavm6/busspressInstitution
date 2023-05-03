@@ -2,6 +2,17 @@ const adminCtrl = {};
 
 const User = require('../models/User');
 
+const Car = require('../models/Car');
+const CarScheduleDrivers = require('../models/CarScheduleDrivers');
+const CarScheduleUsers = require('../models/CarScheduleUsers');
+const ClassSchedule = require('../models/ClassSchedule');
+const Driver = require('../models/Driver');
+const DriverPerCar = require('../models/DriverPerCar');
+const Service = require('../models/Service');
+const Stop = require('../models/Stop');
+const TripControl = require('../models/TripControl');
+
+
 adminCtrl.renderNewuser = (req, res) => {
     res.render('admin/newuser');
 };
@@ -62,24 +73,24 @@ adminCtrl.newuser = async (req, res) => {
             document_number
         } = req.body;
 
-        console.log(user, email, document_number);
+        //console.log(user, email, document_number);
 
         const user1 = await User.findOne({user: user}); 
-        console.log('Usuario', user1);
+        //console.log('Usuario', user1);
         if (user1) {
             errors.push({text: 'Ya existe un usuario con este codigo'});
         }
         
         
         const email1 = await User.findOne({email: email});
-        console.log('Email', email1);
+        //console.log('Email', email1);
         if (email1) {
             errors.push({text: 'Ya existe un usuario con este email'});
         }
 
         
         const document_number1 = await User.findOne({document_number: document_number});
-        console.log('Numero de documento', document_number1);
+        //console.log('Numero de documento', document_number1);
         if (document_number1) {
             errors.push({text: 'Ya existe un usuario con este numero de documento'});
         }

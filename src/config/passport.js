@@ -25,8 +25,8 @@ passport.use(new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    console.log(user);
-    console.log(user.id);
+    //console.log(user);
+    //console.log(user.id);
     done(null, user.id);
 });
 
@@ -34,8 +34,8 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
 
     User.findById(id, (err, user) => {
-        console.log(user);
-        console.log('error: ',err);
+        //console.log(user);
+        //console.log('error: ',err);
         done(err, user);
     }); 
 

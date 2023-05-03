@@ -1,6 +1,34 @@
-<section class="card">
-    <div class="card-body">
-        <h1>Valoracion</h1>
-        <p>Somos una empresa que lleva universitarios por todo el pais a su campus de forma segura y divertida</p>
+
+
+
+<section class="dashboard">
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+        
+    </div>
+    <div class="dash-content">
+        <div class="overview">
+            <div class="title">
+                <i class="uil uil-tachometer-fast-alt"></i>
+                <span class="text">Valoracion</span>
+            </div>
+            <div class="boxes">
+
+                {{#each horariosDeCarroUsuarioVista}}
+
+                <div class="box box1">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="text">Dia</span>
+                    <span class="number">{{day}}</span>
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="text">Hora de recogo</span>
+                    <span class="number">{{pick_hour}}</span>
+                </div>
+
+                {{/each}}
+                
+            </div>
+        </div>
+        
     </div>
 </section>

@@ -1,0 +1,33 @@
+<section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+            
+        </div>
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Horario</span>
+                </div>
+                <div class="boxes">
+                    {{#each horarios}}
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Dia</span>
+                        <span class="number">{{day}}</span>
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Clase</span>
+                        <span class="number">{{class}}</span>
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Inicio de CLase</span>
+                        <span class="number">{{start_hour}}</span>
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Fin de clase</span>
+                        <span class="number">{{end_hour}}</span>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            
+        </div>
+    </section>

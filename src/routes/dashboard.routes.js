@@ -5,7 +5,8 @@ const {
     renderDashboard,
     renderRoutes,
     renderStatistics, 
-    renderAssessment 
+    renderAssessment,
+    renderSchedule 
 } = require('../controllers/dashboard.controller');
 
 const { isAuthenticated } = require('../helpers/auth');
@@ -17,6 +18,10 @@ router.get('/dashboard/routes', isAuthenticated, renderRoutes);
 router.get('/dashboard/statistics', isAuthenticated, renderStatistics);
 
 router.get('/dashboard/assessment', isAuthenticated, renderAssessment);
+
+
+
+router.get('/dashboard/schedule', isAuthenticated, renderSchedule);
 
 
 
