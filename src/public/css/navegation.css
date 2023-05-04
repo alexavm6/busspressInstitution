@@ -10,11 +10,11 @@
 :root{
     /* ===== Colors ===== */
     --primary-color: #1634df;
-    --panel-color: #0b1758;
-    --text-color: #ffffff;
-    --black-light-color: #ffffff;
+    --panel-color: #e7eafa;
+    --text-color: #000000;
+    --black-light-color: #000000;
     --border-color: #e6e5e5;
-    --toggle-color: #DDD;
+    --toggle-color: #000000;
     --box1-color: ;
     --box2-color: ;
     --box3-color: ;
@@ -33,7 +33,7 @@ body{
 body.dark{
     --primary-color: #3A3B3C;
     --panel-color: #242526;
-    --text-color: #CCC;
+    --text-color: #ffffff;
     --black-light-color: #CCC;
     --border-color: #4D4C4C;
     --toggle-color: #FFF;
@@ -311,8 +311,8 @@ nav.close ~ .dashboard .top{
     border-radius: 12px;
     width: calc(100% / 3 - 15px);
     padding: 15px 20px;
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(15,94,110,1) 94%);
+    background: rgb(95,131,214);
+    background: linear-gradient(90deg, rgba(95,131,214,1) 0%, rgba(148,187,233,1) 77%);
     transition: var(--tran-05);
 }
 .boxes .box i{
@@ -367,6 +367,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(
 .mapa {
     width: 100%;
     border-radius: 10px;
+}
+
+.fondoCaption {
+    background-color: #3c30acab;
+    border-radius: 15px;
 }
 
 @media (max-width: 1000px) {

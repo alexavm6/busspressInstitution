@@ -9,20 +9,23 @@
     <div class="dash-content">
         <div class="overview">
             <div class="title">
-                <i class="uil uil-tachometer-fast-alt"></i>
+                <i class="uil uil-thumbs-up"></i>
                 <span class="text">Valoracion</span>
             </div>
             <div class="boxes">
 
                 {{#each horariosDeCarroUsuarioVista}}
 
-                <div class="box box1">
+                <div class="box ">
                     <i class="uil uil-thumbs-up"></i>
                     <span class="text">Dia</span>
                     <span class="number">{{day}}</span>
                     <i class="uil uil-thumbs-up"></i>
                     <span class="text">Hora de recogo</span>
                     <span class="number">{{pick_hour}}</span>
+
+                    <a href="#"><button type="button" class="btn btn-info">Valora aquí</button></a>
+
                 </div>
 
                 {{/each}}

@@ -39,7 +39,10 @@ dashboardCtrl.renderSchedule = async (req, res) => {
     res.render('dashboard/schedule', {horarios});
 };
 
-
+dashboardCtrl.renderFirstSteps = async (req, res) => {
+    
+    res.render('dashboard/firstSteps');
+};
 
 
 
