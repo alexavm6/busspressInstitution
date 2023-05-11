@@ -5,7 +5,7 @@ node_modules
 package-lock.json
 
 # environment variables
-.env
+#.env
 
 ## dist
 dist
