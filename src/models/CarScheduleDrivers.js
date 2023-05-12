@@ -1,5 +1,9 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//importa el schema y modelo de moongose
 const {Schema, model} = require('mongoose');
 
+//Crea un schema para mongodb
 const CarScheduleDriversSchema = new Schema({
     day: {
         type: Date,
@@ -16,6 +20,6 @@ const CarScheduleDriversSchema = new Schema({
 
 
 
-
+//crea un modelo con el nombre elegido y la coleccion donde se guardará
 module.exports = model('CarScheduleDrivers', CarScheduleDriversSchema, 'carSchedulesDrivers');
 

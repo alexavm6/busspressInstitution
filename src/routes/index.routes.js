@@ -1,6 +1,10 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//importa un enrutador
 const { Router } = require('express');
 const router = Router();
 
+//importa las funciones que hará el enrutador dependiendo de la ruta
 const { 
     renderIndex, 
     renderAbout, 
@@ -9,6 +13,7 @@ const {
     renderSteps 
 } = require('../controllers/index.controller');
 
+//dependiendo de la ruta que ingrese renderizará una vista
 router.get('/', renderIndex);
 
 router.get('/about', renderAbout);

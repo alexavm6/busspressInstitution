@@ -1,10 +1,20 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const path = require('path');
-const morgan = require('morgan');
+//Autor: Vasquez Miguel, Alexandra Ivana
 
+//importacion de los modulos
+
+//express crea un servidor facilmente
+const express = require('express');
+//handlebars envia datos a traves de las vistas
+const exphbs = require('express-handlebars');
+//path muestra las rutas segun el sistema operativo
+const path = require('path');
+//muestra las peticiones al servidor
+const morgan = require('morgan');
+//envia mensajes a traves de las vistas
 const flash = require('connect-flash');
+//express-session verifica el inicio de sesion
 const session = require('express-session');
+//passport es la estrategia de autentificacion que usara express-session
 const passport = require('passport');
 
 
@@ -14,7 +24,7 @@ require('./config/passport');
 
 
 /*
-Es mucho muy importante que pongan el seteo de views antes del seteo del motor porque sio les va a aparecer un error  como este:
+Es muy importante que pongan el seteo de views antes del seteo del motor porque sio les va a aparecer un error  como este:
 Error: ENOENT: no such file or directory, open 'C:\Users\yo\src\views\layouts\main.hbs'
 que es un error de cuando no encuentran el archivo
 */

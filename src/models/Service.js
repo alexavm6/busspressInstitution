@@ -1,5 +1,9 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//importa el schema y modelo de moongose
 const {Schema, model} = require('mongoose');
 
+//Crea un schema para mongodb
 const ServiceSchema = new Schema({
     start_service: {
         type: Date,
@@ -20,6 +24,6 @@ const ServiceSchema = new Schema({
 
 
 
-
+//crea un modelo con el nombre elegido y la coleccion donde se guardará
 module.exports = model('Service', ServiceSchema, 'services');
 

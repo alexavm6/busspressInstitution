@@ -1,6 +1,10 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//importa el schema y modelo de moongose
 const {Schema, model} = require('mongoose');
 const bcrypt = require('bcryptjs'); 
 
+//Crea un schema para mongodb
 const UserSchema = new Schema({
     user: {
         type: String,
@@ -60,6 +64,7 @@ const UserSchema = new Schema({
     timestamps: true
 });
 
+//coloca meotodos de encriptacion de password al schema
 UserSchema.methods.encryptPassword = async password => {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
@@ -70,6 +75,6 @@ UserSchema.methods.matchPassword = async function(password) {
 }
 
 
-
+//crea un modelo con el nombre elegido y la coleccion donde se guardará
 module.exports = model('User', UserSchema, 'users');
 

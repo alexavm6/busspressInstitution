@@ -1,5 +1,9 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//crea un objeto donde iran los metodos
 const adminCtrl = {};
 
+//importa los modelos a usar
 const User = require('../models/User');
 
 const Car = require('../models/Car');
@@ -12,7 +16,7 @@ const Service = require('../models/Service');
 const Stop = require('../models/Stop');
 const TripControl = require('../models/TripControl');
 
-
+//por cada direccion renderiza una vista diferente
 adminCtrl.renderNewuser = (req, res) => {
     res.render('admin/newuser');
 };

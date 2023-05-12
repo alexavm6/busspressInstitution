@@ -1,5 +1,9 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//crea un objeto donde iran los metodos
 const indexCtrl = {};
 
+//por cada direccion renderiza una vista diferente
 indexCtrl.renderIndex = (req, res) => {
     res.render('index');
 };

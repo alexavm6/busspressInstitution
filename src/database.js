@@ -1,8 +1,13 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//importa modulo mongoose
 const mongoose = require('mongoose');
 
+//trae las variables de entorno
 const { BUSSPRESS_HOST, BUSSPRESS_DATABASE } = process.env; 
 const MONGODB_URI = `mongodb://${BUSSPRESS_HOST}/${BUSSPRESS_DATABASE}`;
 
+//se conecta a la base de datos de mongodb
 mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true

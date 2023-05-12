@@ -1,8 +1,11 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('../models/User');
 
+//le dice a passport que utilize la estrategia local de autenticacion
 passport.use(new LocalStrategy({
     usernameField: 'user',
     passwordField: 'password'
@@ -24,13 +27,14 @@ passport.use(new LocalStrategy({
 
 }));
 
+//serializa el user y lo guarda en la variable global user
 passport.serializeUser((user, done) => {
     //console.log(user);
     //console.log(user.id);
     done(null, user.id);
 });
 
-
+//deserializa el user
 passport.deserializeUser((id, done) => {
 
     User.findById(id, (err, user) => {

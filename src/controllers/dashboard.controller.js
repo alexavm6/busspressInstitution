@@ -1,5 +1,9 @@
+//Autor: Vasquez Miguel, Alexandra Ivana
+
+//crea un objeto donde iran los metodos
 const dashboardCtrl = {};
 
+//importa los modelos a usar
 const Car = require('../models/Car');
 const CarScheduleDrivers = require('../models/CarScheduleDrivers');
 const CarScheduleUsers = require('../models/CarScheduleUsers');
@@ -12,7 +16,7 @@ const TripControl = require('../models/TripControl');
 const User = require('../models/User');
 
 
-
+//por cada direccion renderiza una vista diferente
 dashboardCtrl.renderDashboard = (req, res) => {
     res.render('dashboard/dashboard');
 };
