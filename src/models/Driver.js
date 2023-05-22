@@ -1,4 +1,4 @@
-//Autor: Vasquez Miguel, Alexandra Ivana
+//Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.
 
 //importa el schema y modelo de moongose
 const {Schema, model} = require('mongoose');

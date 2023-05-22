@@ -1,4 +1,4 @@
-//Autor: Vasquez Miguel, Alexandra Ivana
+//Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.
 
 //crea un objeto donde iran los metodos
 const indexCtrl = {};
