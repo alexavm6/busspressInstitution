@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "64513aad25bf0b08604497a2"
+  },
+  "user": "D178281",
+  "names": "Coco Oscar",
+  "last_names": "Channel Renta",
+  "document_type": "DNI",
+  "document_number": "66633311",
+  "age": 40,
+  "gender": "Hombre",
+  "createdAt": {
+    "$date": "2023-05-02T16:30:37.572Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T16:30:37.572Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64513b18bc7d272f2cafc140"
+  },
+  "user": "D122233",
+  "names": "Sehun",
+  "last_names": "Oh",
+  "document_type": "DNI",
+  "document_number": "23190111",
+  "age": 27,
+  "gender": "Hombre",
+  "createdAt": {
+    "$date": "2023-05-02T16:32:24.523Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T16:32:24.523Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "64512da7355ffc1c04448bfd"
+  },
+  "license_plate_number": "377ARZ12",
+  "createdAt": {
+    "$date": "2023-05-02T15:35:03.950Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T15:35:03.950Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64512dc592730e2cfc303255"
+  },
+  "license_plate_number": "222YTQQQ",
+  "createdAt": {
+    "$date": "2023-05-02T15:35:33.704Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T15:35:33.704Z"
+  },
+  "__v": 0
+}]

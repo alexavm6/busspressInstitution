@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "645133940e421f10b8682000"
+  },
+  "car_schedules_drivers_id": "64513690e759611e6c855db3",
+  "user_id": "643679fbc0a7a1b048483b41",
+  "pick_hour": {
+    "$date": "2023-05-02T07:00:00.106Z"
+  },
+  "createdAt": {
+    "$date": "2023-05-02T16:00:20.120Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T16:00:20.120Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6451349c91aae22c5cbce0da"
+  },
+  "car_schedules_drivers_id": "64513690e759611e6c855db3",
+  "user_id": "413338",
+  "pick_hour": {
+    "$date": "2023-05-02T07:10:00.595Z"
+  },
+  "createdAt": {
+    "$date": "2023-05-02T16:04:44.608Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T16:04:44.608Z"
+  },
+  "__v": 0
+}]

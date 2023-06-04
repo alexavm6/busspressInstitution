@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "64512cb0cf215d15601d099b"
+  },
+  "user_id": "643679fbc0a7a1b048483b41",
+  "total_trips": 30,
+  "taken_trips": 25,
+  "untaken_trips": 5,
+  "createdAt": {
+    "$date": "2023-05-02T15:30:56.813Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T15:30:56.813Z"
+  },
+  "__v": 0
+}]

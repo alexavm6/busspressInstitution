@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "64513c2e2dee900460fa4804"
+  },
+  "start_service": {
+    "$date": "2023-04-27T05:00:00.000Z"
+  },
+  "end_service": {
+    "$date": "2023-05-27T05:00:00.000Z"
+  },
+  "user_or_driver_id": "64513aad25bf0b08604497a2",
+  "createdAt": {
+    "$date": "2023-05-02T16:37:02.186Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T16:37:02.186Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64513c6b7eb63c1a74b3f10e"
+  },
+  "start_service": {
+    "$date": "2023-04-27T05:00:00.000Z"
+  },
+  "end_service": {
+    "$date": "2023-08-27T05:00:00.000Z"
+  },
+  "user_or_driver_id": "643679fbc0a7a1b048483b41",
+  "createdAt": {
+    "$date": "2023-05-02T16:38:03.509Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T16:38:03.509Z"
+  },
+  "__v": 0
+}]

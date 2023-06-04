@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "643679fbc0a7a1b048483b41"
+  },
+  "user": "U20303079",
+  "document_type": "Dni",
+  "document_number": "75555552",
+  "names": "Alexandra Ivana",
+  "last_names": "Vasquez Miguel",
+  "email": "U20303072@utp.edu.pe",
+  "password": "$2a$10$TDWmtjpTM.JFyLuwm5yg7OSKlGP4xGQTIhiv.Z.IeVJuynhZRB9iu",
+  "address": "San Martin de Porres",
+  "campus": "Lima Norte",
+  "phone_number": "979253333",
+  "college_career": "Ingenieria de software",
+  "course": "Ciclo 1",
+  "gender": "Mujer",
+  "age": "20",
+  "start_service": "27/03/2023",
+  "end_service": "27/04/2023",
+  "createdAt": {
+    "$date": "2023-04-12T09:29:31.267Z"
+  },
+  "updatedAt": {
+    "$date": "2023-04-12T09:29:31.267Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64512663bcd6610a78aa05fc"
+  },
+  "user": "U20303074",
+  "document_type": "Dni",
+  "document_number": "755555551",
+  "names": "bbbb",
+  "last_names": "aaa",
+  "email": "qqqqq@jj.com",
+  "address": "San Martin de Porres",
+  "campus": "Lima Norte",
+  "phone_number": "aaaaaa",
+  "college_career": "Ingenieria de software",
+  "course": "Ciclo 7",
+  "gender": "Mujer",
+  "age": "26",
+  "password": "$2a$10$FEP0Xs/G6HTPZX.GcdNRQuTeUUpVgwl1dFzB5mQ8g/8VwDjUZAMlK",
+  "createdAt": {
+    "$date": "2023-05-02T15:04:03.618Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T15:04:03.618Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c90d4eb7b8d2c30c8ec98"
+  },
+  "user": "U20303073",
+  "document_type": "Dni",
+  "document_number": "75555555",
+  "names": "Renata Rosa",
+  "last_names": "Salas Salinas",
+  "email": "U20303073@utp.edu.pe",
+  "address": "San Martin de Porres",
+  "campus": "Lima norte",
+  "phone_number": "979253333",
+  "college_career": "Ingenieria de software",
+  "course": "1",
+  "password": "$2a$10$/koAjwRzHkMMXmACuTE4de93/5IZbomeAz3n80zVuuSlZiOpUVLlq",
+  "createdAt": {
+    "$date": "2023-05-11T06:53:08.886Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-11T06:53:08.886Z"
+  },
+  "__v": 0
+}]

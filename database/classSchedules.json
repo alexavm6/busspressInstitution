@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "64512aeec902581e6cf1685e"
+  },
+  "day": "Lunes",
+  "start_hour": {
+    "$date": "2023-05-02T13:00:00.721Z"
+  },
+  "end_hour": {
+    "$date": "2023-05-02T14:30:00.722Z"
+  },
+  "class": "Programación Logica y Funcional",
+  "user_id": "643679fbc0a7a1b048483b41",
+  "createdAt": {
+    "$date": "2023-05-02T15:23:26.735Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T15:23:26.735Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64512b7c27653e230451fb86"
+  },
+  "day": "Martes",
+  "start_hour": {
+    "$date": "2023-05-02T11:30:00.320Z"
+  },
+  "end_hour": {
+    "$date": "2023-05-02T13:30:00.322Z"
+  },
+  "class": "Curso Integrador de Software",
+  "user_id": "643679fbc0a7a1b048483b41",
+  "createdAt": {
+    "$date": "2023-05-02T15:25:48.335Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-02T15:25:48.335Z"
+  },
+  "__v": 0
+}]
