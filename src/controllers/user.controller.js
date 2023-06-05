@@ -7,6 +7,7 @@ const userCtrl = {};
 
 //importa modulo passport
 const passport = require('passport');
+const nodemailer = require('nodemailer');
 
 //por cada direccion renderiza una vista diferente
 userCtrl.renderLogin = (req, res) => {
@@ -57,6 +58,25 @@ userCtrl.signup = async (req, res) => {
         password,
         confirm_password
     } = req.body;
+
+    const contentHTML = `
+        <h1>Haz sido registrado exitosamente</h1>
+        <p>Ingresa a Busspress con los siguientes datos</p>
+        <ul>
+            <li>Codigo: ${user}</li>
+            <li>Contraseña: La que ingresaste en el formulario</li>
+        </ul>
+    `;
+
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true, // upgrade later with STARTTLS
+        auth: {
+          user: "busspressenterprise@gmail.com",
+          pass: "ezgufuoplzjihjaq",
+        },
+    });
 
     if (password != confirm_password) {
         errors.push({text: 'Las contraseñas no coinciden'});
@@ -154,7 +174,17 @@ userCtrl.signup = async (req, res) => {
             });
             newUser.password = await newUser.encryptPassword(password);
             await newUser.save();
-            req.flash('success_msg', 'Usuario registrado exitosamente');
+
+            const info = await transporter.sendMail({
+                from: "'Busspress' <busspressenterprise@gmail.com>",
+                to: email,
+                subject: "Comienza a usar Busspress",
+                html: contentHTML
+            });
+
+            console.log('Correo enviado', info.messageId);
+
+            req.flash('success_msg', 'Usuario registrado exitosamente, revisa tu correo electronico');
             res.redirect('/user/login'); 
             
         }
