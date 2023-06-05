@@ -10,7 +10,9 @@ const { isAuthenticated } = require('../helpers/auth');
 const { 
     renderLogin,
     login, 
-    logout
+    logout,
+    renderSignup,
+    signup
 } = require('../controllers/user.controller');
 
 //dependiendo de la ruta que ingrese renderizará una vista
@@ -19,6 +21,10 @@ router.get('/user/login', renderLogin);
 router.post('/user/login', login);
 
 router.get('/user/logout', isAuthenticated, logout);
+
+router.get('/user/signup', renderSignup);
+
+router.post('/user/signup', signup);
 
 
 
