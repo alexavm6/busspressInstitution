@@ -13,6 +13,90 @@ mongoose.connect(MONGODB_URI, {
     .catch(err => console.log(err)); 
 
 
+
+
+/*
+try {
+
+    const Price = require('./models/Price.js');
+
+    async function createPrice() {
+
+        const PriceOne = new Price({
+            name: 'Institution Unit Week',
+            price: 10
+        });
+
+        await PriceOne.save().then(console.log('Guardado'));
+
+    }
+
+    createPrice();
+
+} catch (e) {
+
+    console.log(e.message);
+
+}
+*/
+
+/*
+try {
+
+    const Companie = require('./models/Companie.js');
+
+    async function createCompanie() {
+
+        const CompanieOne = new Companie({
+            name: 'Busspress',
+            ruc: '11111111111'
+        });
+
+        console.log(CompanieOne);
+
+        await CompanieOne.save().then(console.log('Guardado'));
+
+        console.log(CompanieOne);
+
+    }
+
+    createCompanie();
+
+} catch (e) {
+
+    console.log(e.message);
+
+}
+*/
+
+try {
+
+    const Car = require('./models/Car.js');
+
+    async function createCars() {
+
+        const newCar = new Car({
+            license_plate_number: 'G6E-222',
+            state: 'Unreserved'
+        });
+
+        console.log(newCar);
+
+        await newCar.save().then(console.log('Guardado'));
+
+        console.log(newCar);
+
+    }
+
+    createCars();
+
+} catch (e) {
+
+    console.log(e.message);
+
+}
+
+
 /*    
 const ClassSchedule = require('./models/ClassSchedule.js');
 
@@ -158,7 +242,7 @@ async function createDriver() {
 }
 
 createDriver();
-*/
+
 
 
 const Service = require('./models/Service.js');
@@ -176,7 +260,7 @@ async function createService() {
 }
 
 createService();
-
+*/
 
 
 

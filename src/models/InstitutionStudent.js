@@ -5,7 +5,7 @@ const {Schema, model, SchemaTypes} = require('mongoose');
 const bcrypt = require('bcryptjs'); 
 
 //Crea un schema para mongodb
-const UserSchema = new Schema({
+const InstitutionStudentSchema = new Schema({
     user: {
         type: String,
         required: true
@@ -30,10 +30,6 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    password:  {
-        type: String,
-        required: true
-    },
     address:  {
         type: String,
         required: true
@@ -55,31 +51,23 @@ const UserSchema = new Schema({
         required: true
     },
     gender: {
-        type: String
+        type: String,
+        required: true
     },
     age: {
-        type: Number
-    },
-    cycles: {
-        type: Number
+        type: Number,
+        required: true
     },
     institution_id:  {
         type: SchemaTypes.ObjectId,
+        required: true,
         ref: "Institution"
     }
 });
 
-//coloca meotodos de encriptacion de password al schema
-UserSchema.methods.encryptPassword = async password => {
-    const salt = await bcrypt.genSalt(10);
-    return await bcrypt.hash(password, salt);
-};
 
-UserSchema.methods.matchPassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
-}
 
 
 //crea un modelo con el nombre elegido y la coleccion donde se guardará
-module.exports = model('User', UserSchema, 'users');
+module.exports = model('InstitutionStudent', InstitutionStudentSchema, 'institutionStudents');
 

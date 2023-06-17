@@ -2,15 +2,18 @@
 body {
     background-image: url('https://wallpaperaccess.com/full/18520.jpg');
 }
+
+
 .ajuste {
     width: 50%;
     margin: auto;
     padding-top: 10px;
 }
 
-.ajuste2 {
+.ajuste70 {
     width: 70%;
     margin: auto;
+    padding-top: 10px;
 }
 
 

@@ -1,0 +1,41 @@
+<! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
+<! ––muestra vista para ingresar nuevo usuario––>
+<main class="ajuste">
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-black text-white">
+      <div class="card-header pt-5">
+        <h4 class="text-center">
+          Registra a tu institución 1
+        </h4>
+      </div>
+      <div class="card-body">
+        <form action="/institution/signupform1" method="POST">
+
+          <div class="mb-3">
+            <label for="semanas">Indique cuantas semanas es un ciclo en su institucion</label>
+            <input type="number" value="1" class="form-control bg-dark text-white" name="semanas" min="1">
+          </div>
+
+          <div class="mb-3">
+            <label for="ciclos">Indique cuantos ciclos quiere adquirir el servicio</label>
+            <input type="number" value="1" class="form-control bg-dark text-white" name="ciclos" min="1">
+          </div>
+
+          <div class="mb-3">
+            <label for="carros">Indique cuantos carros quiere a su disposición (mínimo 5)</label>
+            <input type="number" value="5" class="form-control bg-dark text-white" name="carros" min="5">
+          </div>
+
+          <button class="btn btn-success btn-block">
+            Siguiente
+          </button>
+
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</main>

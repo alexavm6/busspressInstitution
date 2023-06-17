@@ -74,7 +74,7 @@ userCtrl.signup = async (req, res) => {
         secure: true, // upgrade later with STARTTLS
         auth: {
           user: "busspressenterprise@gmail.com",
-          pass: "ezgufuoplzjihjaq",
+          pass: "ynyrcscacpgkzxwo",
         },
     });
 

@@ -4,24 +4,17 @@
 const {Schema, model} = require('mongoose');
 
 //Crea un schema para mongodb
-const StopSchema = new Schema({
-    car_schedules_drivers_id: {
+const CompanieSchema = new Schema({
+    name: {
         type: String,
         required: true
     },
-    user_id:  {
+    ruc:  {
         type: String,
-        required: true
-    },
-    pick_hour:  {
-        type: Date,
         required: true
     }
 });
 
-
-
-
 //crea un modelo con el nombre elegido y la coleccion donde se guardará
-module.exports = model('Stop', StopSchema, 'stops');
+module.exports = model('Companie', CompanieSchema, 'companies');
 

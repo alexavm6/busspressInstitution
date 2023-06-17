@@ -2,49 +2,57 @@
 
 //importa el schema y modelo de moongose
 const {Schema, model} = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 //Crea un schema para mongodb
-const DriverSchema = new Schema({
+const InstitutionSchema = new Schema({
     user: {
         type: String,
         required: true
     },
-    names: {
+    name: {
         type: String,
         required: true
     },
-    last_names: {
+    acronym:  {
         type: String,
         required: true
     },
-    document_type: {
+    ruc: {
         type: String,
         required: true
     },
-    document_number: {
-        type: String,
-        required: true
-    },
-    age: {
+    weeksPerCycle:  {
         type: Number,
         required: true
     },
-    gender: {
+    email: {
         type: String,
+        required: true
+    },
+    cycles:  {
+        type: Number,
+        required: true
+    },
+    password:  {
+        type: String,
+        required: true
+    },
+    cars:  {
+        type: Number,
         required: true
     }
 });
 
-//coloca meotodos de encriptacion de password al schema
-DriverSchema.methods.encryptPassword = async password => {
+InstitutionSchema.methods.encryptPassword = async password => {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
 };
 
-DriverSchema.methods.matchPassword = async function(password) {
+InstitutionSchema.methods.matchPassword = async function(password) {
     return await bcrypt.compare(password, this.password);
 }
 
 //crea un modelo con el nombre elegido y la coleccion donde se guardará
-module.exports = model('Driver', DriverSchema, 'drivers');
+module.exports = model('Institution', InstitutionSchema, 'institutions');
 

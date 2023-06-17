@@ -1,0 +1,48 @@
+<! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
+<! ––muestra vista para ingresar nuevo usuario––>
+<main class="ajuste70">
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-black text-white">
+      <div class="card-header pt-5">
+        <h4 class="text-center">
+          Registra a tu institución
+        </h4>
+      </div>
+      <div class="card-body">
+        <form action="/institution/signupform4" method="POST" enctype="multipart/form-data">
+          
+          <input name="user" type="hidden" value="{{userGlobal}}">
+          <input name="password" type="hidden" value="{{passwordGlobal}}">
+          <input name="name" type="hidden" value="{{nameGlobal}}">
+          <input name="acronym" type="hidden" value="{{acronymGlobal}}">
+          <input name="ruc" type="hidden" value="{{rucGlobal}}">
+          <input name="weeksPerCycle" type="hidden" value="{{semanasGlobal}}">
+          <input name="email" type="hidden" value="{{emailGlobal}}">
+          <input name="cycles" type="hidden" value="{{ciclosGlobal}}">
+          <input name="cars" type="hidden" value="{{carrosGlobal}}">
+          
+          <input name="institutionRegistrationPriceGlobal" type="hidden" value="{{institutionRegistrationPriceGlobal}}">
+          <input name="totalPorCantidadDeCarrosGlobal" type="hidden" value="{{totalPorCantidadDeCarrosGlobal}}">
+          <input name="totalSemanasDelServicioGlobal" type="hidden" value="{{totalSemanasDelServicioGlobal}}">
+          <input name="totalGlobal" type="hidden" value="{{totalGlobal}}">
+
+          <div class="mb-3">
+            <label for="date">Ingrese archivo JSON de fechas de inicio y fin de ciclos:</label>
+            <input
+              type="file"
+              class="form-control-file"
+              name="date"
+            />
+          </div>
+          
+          <button class="btn btn-success btn-block">
+            Registrar Institucion
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
