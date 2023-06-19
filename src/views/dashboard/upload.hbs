@@ -1,0 +1,106 @@
+<! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
+<! ––muestra vista dashboard del usuario––>
+
+
+
+<main class="ajuste">
+    <div class="jumbotron mt-4">
+        <h1>Elige que archivo subir </h1>
+
+        
+
+        <div class="mx-auto pt-5">
+            <h4>Subir archivo de estudiantes en tu institución</h4>
+            <a href="/upload/institutionstudents"><button type="button" class="btn btn-warning">Subir</button></a>
+
+            <form action="/upload/institutionstudentsdatabase" method="POST" class="pt-5">
+
+              <div class="mb-3">
+                <label for="semanas">Indique el nombre del archivo de alumnos:</label>
+                <input type="text" placeholder="Nombre" class="form-control bg-dark text-white" name="archiveName" >
+              </div>
+
+              
+
+              <button class="btn btn-success btn-block">
+                Subir a la base de datos
+              </button>
+
+
+            </form>
+        </div>
+
+        <div class="mx-auto pt-5">
+            <h4>Subir archivo de los horarios de clase de los alumnos en tu institucion</h4>
+            <a href="/upload/institutionstudentsclassschedules"><button type="button" class="btn btn-danger">Subir</button></a>
+
+            <form action="/upload/institutionstudentsclassschedulesdatabase" method="POST" class="pt-5">
+
+              <div class="mb-3">
+                <label for="semanas">Indique el nombre del archivo de los horarios de clase de los alumnos en tu institucion:</label>
+                <input type="text" placeholder="Nombre" class="form-control bg-dark text-white" name="archiveName" >
+              </div>
+
+              
+
+              <button class="btn btn-success btn-block">
+                Subir a la base de datos
+              </button>
+
+
+            </form>
+        </div>
+
+
+        <div class="mx-auto pt-5">
+            <h4>Subir archivo de los dias en que el código se ejecuta</h4>
+            <a href="/upload/institutiondayscoderuns"><button type="button" class="btn btn-success">Subir</button></a>
+
+            <form action="/upload/institutiondayscoderunsdatabase" method="POST" class="pt-5">
+
+              <div class="mb-3">
+                <label for="semanas">Indique el nombre del archivo de los dias en que el código se ejecuta:</label>
+                <input type="text" placeholder="Nombre" class="form-control bg-dark text-white" name="archiveName" >
+              </div>
+
+              
+
+              <button class="btn btn-success btn-block">
+                Subir a la base de datos
+              </button>
+
+
+            </form>
+        </div>
+
+        
+        <div class="mx-auto pt-5">
+            <h4>Subir archivo de fechas de inicio y fin de ciclos</h4>
+            <a href="/upload/institutioncycleschedules"><button type="button" class="btn btn-info">Subir</button></a>
+
+            <form action="/upload/institutioncycleschedulesdatabase" method="POST" class="pt-5">
+
+              <div class="mb-3">
+                <label for="semanas">Indique el nombre del archivo de fechas de inicio y fin de ciclos:</label>
+                <input type="text" placeholder="Nombre" class="form-control bg-dark text-white" name="archiveName" >
+              </div>
+
+              
+
+              <button class="btn btn-success btn-block">
+                Subir a la base de datos
+              </button>
+
+
+            </form>
+        </div>
+
+
+        
+        
+        
+
+    </div>
+</main>
+
+

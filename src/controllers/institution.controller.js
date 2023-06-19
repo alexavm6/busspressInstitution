@@ -1,7 +1,13 @@
 //Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.
 //importa los modelos a usar
 const Price = require('../models/Price.js');
+const Car = require('../models/Car.js');
+const InstitutionCar = require('../models/InstitutionCar.js');
+const Driver = require('../models/Driver.js');
+const DriverInService = require('../models/DriverInService.js');
+const DriverPerCar = require('../models/DriverPerCar.js');
 const path = require('path');
+const passport = require('passport');
 
 //crea un objeto donde iran los metodos
 const institutionCtrl = {};
@@ -16,14 +22,41 @@ const InstitutionTicket = require('../models/InstitutionTicket.js');
 const InstitutionTicketDetail = require('../models/InstitutionTicketDetail.js');
 
 
+institutionCtrl.renderLogin = async (req, res) => {
+    
+    res.render('institution/login');
+};
+
+institutionCtrl.login = passport.authenticate('local', {
+    failureRedirect: '/institution/login',
+    successRedirect: '/dashboard',
+    failureFlash: true
+});
+
+institutionCtrl.logout = (req, res, next) => {
+    req.logout(function(err) {
+        if (err) {
+            return next(err);
+        }
+        req.flash('success_msg', 'Sesión de institución cerrada exitosamente');
+        res.redirect('/institution/login');
+    });
+    /*
+    req.flash('success_msg', 'Sesión cerrada exitosamente');
+    res.redirect('/user/login');
+    */
+};
+
+
 
 //por cada direccion renderiza una vista diferente
-institutionCtrl.renderSignup =  (req, res) => {
-    res.render('institution/signupForm1');
+institutionCtrl.renderSignup = async (req, res) => {
+    const unreservedCars = await Car.countDocuments({state: "Unreserved"});
+    res.render('institution/signupForm1', {unreservedCars});
 };
 
 let semanasGlobal, ciclosGlobal, carrosGlobal;
-let nameGlobal, acronymGlobal, rucGlobal, emailGlobal, userGlobal, passwordGlobal;
+
 let institutionRegistrationPriceGlobal, totalPorCantidadDeCarrosGlobal, totalSemanasDelServicioGlobal, totalGlobal;
 
 
@@ -78,32 +111,9 @@ institutionCtrl.signupForm1 = async (req, res) => {
 institutionCtrl.signupForm2 = async (req, res) => {
 
     const {name, acronym, ruc, email, user, password} = req.body;
-    nameGlobal = name;
-    acronymGlobal = acronym;
-    rucGlobal = ruc;
-    emailGlobal = email;
-    userGlobal = user;
-    passwordGlobal = password; 
+
+    console.log(req.body,semanasGlobal, ciclosGlobal, carrosGlobal,institutionRegistrationPriceGlobal, totalPorCantidadDeCarrosGlobal, totalSemanasDelServicioGlobal, totalGlobal);
     
-
-    console.log(req.body, semanasGlobal, carrosGlobal, ciclosGlobal, nameGlobal, acronymGlobal, rucGlobal, emailGlobal, userGlobal, passwordGlobal);
-    res.render('institution/signupForm3');
-};
-
-institutionCtrl.signupForm3 = async (req, res) => {
-
-    console.log("PUT: FORM3", semanasGlobal, carrosGlobal, ciclosGlobal, nameGlobal, acronymGlobal, rucGlobal, emailGlobal, institutionRegistrationPriceGlobal, totalPorCantidadDeCarrosGlobal, totalSemanasDelServicioGlobal, totalGlobal, userGlobal, passwordGlobal);
-
-    res.render('institution/signupForm4', {semanasGlobal, carrosGlobal, ciclosGlobal, nameGlobal, acronymGlobal, rucGlobal, emailGlobal, institutionRegistrationPriceGlobal, totalPorCantidadDeCarrosGlobal, totalSemanasDelServicioGlobal, totalGlobal, userGlobal, passwordGlobal});
-        
-};
-
-institutionCtrl.signupForm4 = async (req, res) => {
-    
-    const {name, acronym, ruc, weeksPerCycle, email, cycles, cars, institutionRegistrationPriceGlobal, totalPorCantidadDeCarrosGlobal, totalSemanasDelServicioGlobal, totalGlobal, user, password} = req.body;
-
-    console.log("------------------------",req.body);
-    console.log("------------------------",user, password);
 
     const newInstitution = new Institution({
         user: user,
@@ -111,10 +121,10 @@ institutionCtrl.signupForm4 = async (req, res) => {
         name: name,
         acronym: acronym,
         ruc: ruc,
-        weeksPerCycle: parseInt(weeksPerCycle),
+        weeksPerCycle: parseInt(semanasGlobal),
         email: email,
-        cycles: parseInt(cycles),
-        cars: parseInt(cars)
+        cycles: parseInt(ciclosGlobal),
+        cars: parseInt(carrosGlobal)
     });
 
     newInstitution.password = await newInstitution.encryptPassword(password);
@@ -124,7 +134,7 @@ institutionCtrl.signupForm4 = async (req, res) => {
                         console.log(newInstitution)
 
     const institution_id = newInstitution._id;
-                        console.log(institution_id)
+                        console.log(institution_id) 
 
     const companieInfo = await Companie.findById('648ba532a5f1532634da4949');
                         console.log(companieInfo)
@@ -163,51 +173,114 @@ institutionCtrl.signupForm4 = async (req, res) => {
     }
 
 
-    /*
     const contentHTML = `
-        <h1>Tu institution ha sido registrada correctamente</h1>
+        <h1>Tu institución ha sido registrada correctamente</h1>
         <p></p>
         <ul>
             <li>Monto total: ${totalGlobal}</li>
-            <li>${descriptions[0]}: ${amounts[0]}</li>
-            <li>${descriptions[1]}: ${amounts[1]}</li>
-            <li>${descriptions[2]}: ${amounts[2]}</li>
+            <li>${descriptions[0]}: S/.${amounts[0]}</li>
+            <li>${descriptions[1]}: S/.${amounts[1]}</li>
+            <li>${descriptions[2]}: S/.${amounts[2]}</li>
         </ul>
     `;
 
-    try {
+    
         
-        const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true, // upgrade later with STARTTLS
-            auth: {
-              user: "busspressenterprise@gmail.com",
-              pass: "ynyrcscacpgkzxwo",
-            },
-        });
-                console.log("Envia correo 1")
-                console.log(transporter)
-    
-        const info = await transporter.sendMail({
-            from: "'Busspress' <busspressenterprise@gmail.com>",
-            to: "alexaivanavm6@gmailcom",
-            subject: "Comienza a usar Busspress",
-            html: "contentHTML"
-        });
-                console.log("Envia correo 2")
-                console.log(info)
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true, // upgrade later with STARTTLS
+        auth: {
+            user: "busspressenterprise@gmail.com",
+            pass: "ynyrcscacpgkzxwo",
+        },
+    });
+            console.log("Envia correo 1")
+            console.log(transporter)
 
-    } catch (e) {
-        console.log(e.message);
+    const info = await transporter.sendMail({
+        from: "'Busspress' <busspressenterprise@gmail.com>",
+        to: email,
+        subject: "Comienza a usar Busspress",
+        html: contentHTML
+    });
+            console.log("Envia correo 2")
+            console.log(info)
+
+
+    const arrayCars = await Car.find({state: "Unreserved"}).limit(parseInt(carrosGlobal));
+    console.log(arrayCars)
+
+    const driverPerCarsInstitutionCars = [];
+    const driverPerCarsDriversInService = [];
+
+    for (let car of arrayCars) {
+
+        const res = await Car.updateOne({ _id: car._id }, { state: 'Reserved' });
+
+        const newInstitutionCar = new InstitutionCar({
+            license_plate_number: car.license_plate_number,
+            institution_id: institution_id
+        });
+
+        await newInstitutionCar.save();
+
+        driverPerCarsInstitutionCars.push(newInstitutionCar._id);
+
     }
-    */
-    
+
+    const arrayDrivers = await Driver.find({state: "Out of service"}).limit(parseInt(carrosGlobal));
+    console.log(arrayDrivers)
+
+    for (let driver of arrayDrivers) {
+
+        const res = await Driver.updateOne({ _id: driver._id }, { state: 'In service ' });
+
+        let newDocument_number = driver.document_number;
+        
+
+        const newDriverInService = new DriverInService({
+            user: driver.user,
+            document_type: driver.document_type,
+            document_number: newDocument_number,
+            names: driver.names,
+            last_names: driver.last_names,
+            email: driver.email,
+            password: newDocument_number,
+            address: driver.address,
+            phone_number: driver.phone_number,
+            gender: driver.gender,
+            age: driver.age
+        });
+
+        newDriverInService.password = await newDriverInService.encryptPassword(newDocument_number);
+
+        await newDriverInService.save();
+
+        driverPerCarsDriversInService.push(newDriverInService._id);
+
+    }
+
+
+    for (let index = 0; index < driverPerCarsInstitutionCars.length; index++) {
+        
+        const newDriverPerCar = new DriverPerCar({
+            driver_in_service_id: driverPerCarsDriversInService[index],
+            institution_car_id: driverPerCarsInstitutionCars[index]
+        });
+
+        await newDriverPerCar.save();
+        
+    }
 
 
     req.flash('success_msg', 'Registro exitoso, revise su email');
     res.redirect('/institution/signup');
-    
+
+
 };
+
+
+
  
 module.exports = institutionCtrl;

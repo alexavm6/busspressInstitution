@@ -10,6 +10,7 @@ const {
     renderRoutes,
     renderStatistics, 
     renderAssessment,
+    renderUpload,
     renderSchedule,
     renderFirstSteps 
 } = require('../controllers/dashboard.controller');
@@ -26,7 +27,7 @@ router.get('/dashboard/statistics', isAuthenticated, renderStatistics);
 
 router.get('/dashboard/assessment', isAuthenticated, renderAssessment);
 
-
+router.get('/dashboard/upload', isAuthenticated, renderUpload);
 
 router.get('/dashboard/schedule', isAuthenticated, renderSchedule);
 

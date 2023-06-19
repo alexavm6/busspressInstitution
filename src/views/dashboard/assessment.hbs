@@ -2,37 +2,13 @@
 <! ––muestra vista para valorar a los conductores––>
 
 
-<section class="dashboard">
-    <div class="top">
-        <i class="uil uil-bars sidebar-toggle"></i>
+<main class="ajuste">
+    <div class="jumbotron mt-4">
         
-    </div>
-    <div class="dash-content">
-        <div class="overview">
-            <div class="title">
-                <i class="uil uil-thumbs-up"></i>
-                <span class="text">Valoracion</span>
-            </div>
-            <div class="boxes">
+        <a href="/dashboard/firstSteps"><button type="button" class="btn btn-info">Primeros pasos</button></a>
 
-                {{#each horariosDeCarroUsuarioVista}}
-
-                <div class="box ">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="text">Dia</span>
-                    <span class="number">{{day}}</span>
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="text">Hora de recogo</span>
-                    <span class="number">{{pick_hour}}</span>
-
-                    <a href="#"><button type="button" class="btn btn-info">Valora aquí</button></a>
-
-                </div>
-
-                {{/each}}
-                
-            </div>
-        </div>
+        <p>{{user_global}}</p>
         
+
     </div>
-</section>
+</main>

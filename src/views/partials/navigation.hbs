@@ -24,6 +24,19 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/dashboard/schedule">Horario<span class="sr-only">(current)</span></a>
                     </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Subir Archivos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/dashboard/upload">Sube tus archivos</a>
+                            <a class="dropdown-item" href="/upload/institutionstudents">Sube estudiantes</a>
+                            <a class="dropdown-item" href="/upload/institutionstudentsclassschedules">Sube horarios de clase</a>
+                            <a class="dropdown-item" href="/upload/institutiondayscoderuns">Sube dias código se ejecuta</a>
+                            <a class="dropdown-item" href="/upload/institutioncycleschedules">Sube fechas de ciclo</a>
+                        </div>
+                    </li>
                 {{else}}
                     <li class="nav-item active">
                     <a class="nav-link" href="/contact"><i class="fa-solid fa-phone p-1" style="color: #ffffff;"></i>Contactanos<span class="sr-only">(current)</span></a>
@@ -42,16 +55,13 @@
             <ul class="navbar-nav ml-auto">
                 {{#if user_global}}
                     <li class="nav-item active">
-                    <a class="nav-link" href="/user/logout">Cerrar Sesión<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/institution/logout">Cerrar Sesión<span class="sr-only">(current)</span></a>
                     </li>
                 {{else}}
                     <li class="nav-item active">
-                    <a class="nav-link" href="/user/login"><i class="fa-solid fa-location-dot p-1" style="color: #ffffff;"></i>Inicia Sesión<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/institution/login"><i class="fa-solid fa-location-dot p-1" style="color: #ffffff;"></i>Inicia Sesión Institución<span class="sr-only">(current)</span></a>
                     </li>
 
-                    <li class="nav-item active">
-                    <a class="nav-link" href="/user/signup"><i class="fa-solid fa-location-dot p-1" style="color: #ffffff;"></i>Registro de Alumnos<span class="sr-only">(current)</span></a>
-                    </li>
 
                     <li class="nav-item active">
                     <a class="nav-link" href="/institution/signup"><i class="fa-solid fa-location-dot p-1" style="color: #ffffff;"></i>Registro de Instituciones<span class="sr-only">(current)</span></a>

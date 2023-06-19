@@ -6,33 +6,65 @@ const path = require('path');
 const multerHelper = {};
 
 const storageStudent = multer.diskStorage({
-    destination: path.join(__dirname, '..','institutionJsons','studentJsons'),
+    destination: path.join(__dirname, '..','institutionJsons','studentsJsons'),
     filename: function(req,file,cb){
-        cb("",file.originalname+".json");
+        cb("",file.originalname);
     }
 });
 
-const uploadStudentJsonsMulter = multer({
+const uploadStudentJsonMulter = multer({
     storage: storageStudent
 });
 
-multerHelper.uploadStudentJsons = uploadStudentJsonsMulter.single('student');
+multerHelper.uploadStudentJson = uploadStudentJsonMulter.single('students');
 
 
 
 
-const storageDate = multer.diskStorage({
-    destination: path.join(__dirname, '..','institutionJsons','dateJsons'),
+const storageStudentClassSchedule = multer.diskStorage({
+    destination: path.join(__dirname, '..','institutionJsons','studentsClassSchedulesJsons'),
     filename: function(req,file,cb){
-        cb("",file.originalname+".json");
+        cb("",file.originalname);
     }
 });
 
-const uploadDateJsonsMulter = multer({
-    storage: storageDate
+const uploadStudentClassScheduleJsonMulter = multer({
+    storage: storageStudentClassSchedule
 });
 
-multerHelper.uploadDateJsons = uploadDateJsonsMulter.single('date');
+multerHelper.uploadStudentClassScheduleJson = uploadStudentClassScheduleJsonMulter.single('schedules');
+
+
+
+
+const storageDayCodeRuns = multer.diskStorage({
+    destination: path.join(__dirname, '..','institutionJsons','daysCodeRunsJsons'),
+    filename: function(req,file,cb){
+        cb("",file.originalname);
+    }
+});
+
+const uploadDayCodeRunsJsonMulter = multer({
+    storage: storageDayCodeRuns
+});
+
+multerHelper.uploadDayCodeRunsJson = uploadDayCodeRunsJsonMulter.single('days');
+
+
+
+
+const storageCycleSchedule = multer.diskStorage({
+    destination: path.join(__dirname, '..','institutionJsons','cycleSchedulesJsons'),
+    filename: function(req,file,cb){
+        cb("",file.originalname);
+    }
+});
+
+const uploadCycleScheduleJsonMulter = multer({
+    storage: storageCycleSchedule
+});
+
+multerHelper.uploadCycleScheduleJson = uploadCycleScheduleJsonMulter.single('cycles');
 
 
 module.exports = multerHelper;

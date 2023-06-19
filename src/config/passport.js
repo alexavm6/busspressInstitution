@@ -3,7 +3,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const User = require('../models/User');
+const Institution = require('../models/Institution');
 
 //le dice a passport que utilize la estrategia local de autenticacion
 passport.use(new LocalStrategy({
@@ -12,9 +12,9 @@ passport.use(new LocalStrategy({
 }, async (user, password, done) => {
 
     //Match user
-    const userFound = await User.findOne({user});
+    const userFound = await Institution.findOne({user});
     if (!userFound) {
-        return done(null, false, { message: 'Usuario no encontrado' });
+        return done(null, false, { message: 'Institución no encontrada' });
     } else {
         //Match password of the user found
         const match = await userFound.matchPassword(password);
@@ -37,7 +37,7 @@ passport.serializeUser((user, done) => {
 //deserializa el user
 passport.deserializeUser((id, done) => {
 
-    User.findById(id, (err, user) => {
+    Institution.findById(id, (err, user) => {
         //console.log(user);
         //console.log('error: ',err);
         done(err, user);

@@ -38,6 +38,14 @@ dashboardCtrl.renderAssessment = async (req, res) => {
     res.render('dashboard/assessment', {horariosDeCarroUsuarioVista});
 };
 
+
+dashboardCtrl.renderUpload = async (req, res) => {
+
+
+    res.render('dashboard/upload');
+};
+
+
 dashboardCtrl.renderSchedule = async (req, res) => {
     const horarios = await ClassSchedule.find({user_id: req.user._id})
     res.render('dashboard/schedule', {horarios});

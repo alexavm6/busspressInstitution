@@ -1,0 +1,35 @@
+<! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
+<! ––muestra vista para ingresar nuevo usuario––>
+<main class="ajuste70">
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-black text-white">
+      <div class="card-header pt-5">
+        <h4 class="text-center">
+          Subir archivo de estudiantes en tu institución
+        </h4>
+      </div>
+      <div class="card-body">
+        <form action="/upload/institutionstudents" method="POST" enctype="multipart/form-data">
+          
+          <div class="mb-3">
+            <label for="students">Ingrese archivo JSON de alumnado:</label>
+            <input
+              type="file"
+              class="form-control-file"
+              name="students"
+            />
+          </div>
+
+          
+          
+          <button class="btn btn-success btn-block">
+            Subir archivo
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
