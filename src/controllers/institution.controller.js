@@ -177,7 +177,7 @@ institutionCtrl.signupForm2 = async (req, res) => {
         <h1>Tu institución ha sido registrada correctamente</h1>
         <p></p>
         <ul>
-            <li>Monto total: ${totalGlobal}</li>
+            <li>Monto total: S/.${totalGlobal}</li>
             <li>${descriptions[0]}: S/.${amounts[0]}</li>
             <li>${descriptions[1]}: S/.${amounts[1]}</li>
             <li>${descriptions[2]}: S/.${amounts[2]}</li>
