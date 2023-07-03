@@ -27,6 +27,9 @@ const InstitutionStudentClassScheduleSchema = new Schema({
         required: true,
         ref: "InstitutionStudent"
     }
+},
+{
+    timestamps: true
 });
 
 

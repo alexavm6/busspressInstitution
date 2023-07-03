@@ -5,23 +5,19 @@ const {Schema, model, SchemaTypes} = require('mongoose');
 
 
 //Crea un schema para mongodb
-const CycleScheduleByInstitutionSchema = new Schema({
-    cycle: {
-        type: String,
-        required: true
-    },
-    cycle_start:  {
+const UserServiceSchema = new Schema({
+    start_service:  {
         type: Date,
         required: true
     },
-    cycle_end: {
+    end_service: {
         type: Date,
         required: true
     },
-    institution_id:  {
+    user_id:  {
         type: SchemaTypes.ObjectId,
         required: true,
-        ref: "Institution"
+        ref: "User"
     }
 },
 {
@@ -32,5 +28,5 @@ const CycleScheduleByInstitutionSchema = new Schema({
 
 
 //crea un modelo con el nombre elegido y la coleccion donde se guardará
-module.exports = model('CycleScheduleByInstitution', CycleScheduleByInstitutionSchema, 'cycleSchedulesByInstitution');
+module.exports = model('UserService', UserServiceSchema, 'userServices');
 

@@ -19,7 +19,7 @@ const uploadStudentJsonMulter = multer({
 multerHelper.uploadStudentJson = uploadStudentJsonMulter.single('students');
 
 
-
+/*
 
 const storageStudentClassSchedule = multer.diskStorage({
     destination: path.join(__dirname, '..','institutionJsons','studentsClassSchedulesJsons'),
@@ -33,7 +33,7 @@ const uploadStudentClassScheduleJsonMulter = multer({
 });
 
 multerHelper.uploadStudentClassScheduleJson = uploadStudentClassScheduleJsonMulter.single('schedules');
-
+*/
 
 
 

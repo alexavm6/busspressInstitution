@@ -234,7 +234,7 @@ institutionCtrl.signupForm2 = async (req, res) => {
 
     for (let driver of arrayDrivers) {
 
-        const res = await Driver.updateOne({ _id: driver._id }, { state: 'In service ' });
+        const res = await Driver.updateOne({ _id: driver._id }, { state: 'In service' });
 
         let newDocument_number = driver.document_number;
         
@@ -250,7 +250,8 @@ institutionCtrl.signupForm2 = async (req, res) => {
             address: driver.address,
             phone_number: driver.phone_number,
             gender: driver.gender,
-            age: driver.age
+            age: driver.age,
+            institution_id: institution_id
         });
 
         newDriverInService.password = await newDriverInService.encryptPassword(newDocument_number);

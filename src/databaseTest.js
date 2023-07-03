@@ -15,6 +15,22 @@ mongoose.connect(MONGODB_URI, {
 
 
 
+
+var horaString = "2023-06-28T07:36:00.000+00:00";
+
+// Convertir la cadena de hora en formato ISO 8601 a un objeto Date
+var fechaCompleta = new Date(horaString);
+
+console.log(horaString);
+console.log(fechaCompleta);
+
+
+
+
+
+
+
+
 /*
 try {
 
@@ -98,7 +114,7 @@ try {
 }
 */
 
-
+/*
 
 try {
 
@@ -135,6 +151,8 @@ try {
     console.log(e.message);
 
 }
+
+/*
 
 /*    
 const ClassSchedule = require('./models/ClassSchedule.js');

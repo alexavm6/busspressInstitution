@@ -10,15 +10,14 @@ const { isAuthenticated } = require('../helpers/auth');
 const { 
     renderInstitutionStudents,
     institutionStudents,
-    renderInstitutionStudentsClassSchedules,
-    institutionStudentsClassSchedules,
+    
     renderInstitutionDaysCodeRuns,
     institutionDaysCodeRuns,
     renderInstitutionCycleSchedules,
     institutionCycleSchedules,
 
     institutionstudentsdatabase,
-    institutionstudentsclassschedulesdatabase,
+    
     institutiondayscoderunsdatabase,
     institutioncycleschedulesdatabase
 } = require('../controllers/upload.controller');
@@ -26,7 +25,7 @@ const {
 
 const { 
     uploadStudentJson,
-    uploadStudentClassScheduleJson,
+    
     uploadDayCodeRunsJson,
     uploadCycleScheduleJson
 } = require('../helpers/multer.helper');
@@ -38,11 +37,11 @@ router.get('/upload/institutionstudents', isAuthenticated, renderInstitutionStud
 router.post('/upload/institutionstudents', isAuthenticated, uploadStudentJson, institutionStudents);
 
 
-
+/*
 router.get('/upload/institutionstudentsclassschedules', isAuthenticated, renderInstitutionStudentsClassSchedules);
 
 router.post('/upload/institutionstudentsclassschedules', isAuthenticated, uploadStudentClassScheduleJson, institutionStudentsClassSchedules);
-
+*/
 
 
 router.get('/upload/institutiondayscoderuns', isAuthenticated, renderInstitutionDaysCodeRuns); 
@@ -60,7 +59,9 @@ router.post('/upload/institutioncycleschedules', isAuthenticated, uploadCycleSch
 
 router.post('/upload/institutionstudentsdatabase', isAuthenticated, institutionstudentsdatabase);
 
+/*
 router.post('/upload/institutionstudentsclassschedulesdatabase', isAuthenticated, institutionstudentsclassschedulesdatabase);
+*/
 
 router.post('/upload/institutiondayscoderunsdatabase', isAuthenticated, institutiondayscoderunsdatabase);
 

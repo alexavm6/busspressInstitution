@@ -23,6 +23,9 @@ const DayCodeRunsByInstitutionSchema = new Schema({
         required: true,
         ref: "Institution"
     }
+},
+{
+    timestamps: true
 });
 
 

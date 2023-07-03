@@ -1,0 +1,72 @@
+[
+    {
+        "user": "U20303074",
+        "document_type": "DNI",
+        "document_number": "75999999",
+        "names": "Alexandra Ivana",
+        "last_names": "Vasquez Miguel",
+        "email": "alexaivanavm6@gmail.com",
+        "address": "San Martin de Porres",
+        "campus": "Lima Norte",
+        "phone_number": "9808080",
+        "college_career": "Ingenieria de Software",
+        "course": "6",
+        "gender": "F",
+        "age": "21",
+        "schedule": [
+            {
+                "day": "Lunes",
+                "start_hour": "2023-01-01T08:00:00.000+00:00",
+                "end_hour": "2023-01-01T09:30:00.000+00:00",
+                "class": "Sistemas Operativos"
+            },
+            {
+                "day": "Viernes",
+                "start_hour": "2023-01-01T11:00:00.000+00:00",
+                "end_hour": "2023-01-01T13:15:00.000+00:00",
+                "class": "Cálculo aplicado a la física 1"
+            },
+            {
+                "day": "Sabado",
+                "start_hour": "2023-01-01T15:00:00.000+00:00",
+                "end_hour": "2023-01-01T18:00:00.000+00:00",
+                "class": "Redes y comunicación de datos 1"
+            }
+        ]
+    },
+    {
+        "user": "U20303075",
+        "document_type": "DNI",
+        "document_number": "75666666",
+        "names": "Ron Carlos",
+        "last_names": "Wisly Junior",
+        "email": "alexaivanavm6@hotmail.com",
+        "address": "Los Olivos Izaguirre",
+        "campus": "Lima Sur",
+        "phone_number": "910101010",
+        "college_career": "Ingenieria de Sistemas",
+        "course": "7",
+        "gender": "M",
+        "age": "24",
+        "schedule": [
+            {
+                "day": "Martes",
+                "start_hour": "2023-01-01T08:00:00.000+00:00",
+                "end_hour": "2023-01-01T09:30:00.000+00:00",
+                "class": "Sistemas Operativos"
+            },
+            {
+                "day": "Jueves",
+                "start_hour": "2023-01-01T11:00:00.000+00:00",
+                "end_hour": "2023-01-01T13:15:00.000+00:00",
+                "class": "Cálculo aplicado a la física 1"
+            },
+            {
+                "day": "Viernes",
+                "start_hour": "2023-01-01T15:00:00.000+00:00",
+                "end_hour": "2023-01-01T18:00:00.000+00:00",
+                "class": "Redes y comunicación de datos 1"
+            }
+        ]
+    }
+]
