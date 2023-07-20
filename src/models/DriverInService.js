@@ -50,6 +50,10 @@ const DriverInServiceSchema = new Schema({
         type: Number,
         required: true
     },
+    score: {
+        type: Number,
+        required: true
+    },
     institution_id:  {
         type: SchemaTypes.ObjectId,
         required: true,

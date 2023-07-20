@@ -3,15 +3,60 @@
 
 
 
-<main class="ajuste">
-    <div class="jumbotron mt-4">
-        
-        <a href="/dashboard/firstSteps"><button type="button" class="btn btn-info">Primeros pasos</button></a>
+<section class="card ajuste">
+<div class="card-body">
+    <h1>Dashboard</h1>
+    
+    <br>
 
-        <p>{{user_global}}</p>
-        
+    <a href="/dashboard/firstSteps"><button type="button" class="btn btn-info">Primeros pasos</button></a>
 
+    <p></p>
+    
+    <div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="/img/usuario.jpg" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Información de Usuarios</h5>
+        <p class="card-text">Usuarios Subidos: {{institutionStudents}}</p>
+        <p class="card-text">Usuarios Inscritos: {{users}}</p>
+        </div>
     </div>
-</main>
+    <div class="card">
+        <img class="card-img-top" src="/img/personal.png" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Información del Personal</h5>
+        <p class="card-text">Carros: {{institutionCars}}</p>
+        <p class="card-text">Conductores: {{driversInService}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="/img/institucional.png" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Información Institucional</h5>
+        <p class="card-text">Usuario: {{user_global.user}}</p>
+        <p class="card-text">Nombre: {{user_global.name}}</p>
+        <p class="card-text">Acrónimo: {{user_global.acronym}}</p>
+        <p class="card-text">Ruc: {{user_global.ruc}}</p>
+        <p class="card-text">Semanas por Ciclo: {{user_global.weeksPerCycle}}</p>
+        <p class="card-text">Correo: {{user_global.email}}</p>
+        <p class="card-text">Ciclos inscritos: {{user_global.cycles}}</p>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+
+</div>
+</section>
+
+
 
 
